@@ -1,9 +1,19 @@
 body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #8ec5fc, #e0c3fc);
+    font-family: Verdana, Geneva, sans-serif;
+    margin: 25px;
 }
 
 p {
-    color: green;
-    font-size: 16px;
+    color: #006400;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+div {
+    margin-top: 20px;
+    padding: 20px;
+    border: 3px solid #4b0082;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
 }
