@@ -2,31 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced HTML</title>
 </head>
 <body>
+
     <header>
-        <h1>Student Profile</h1>
+        <h1>23/EG/CO/016</h1>
+        <h2>Student Information Page</h2>
     </header>
-    <section>
-        <img src="https://via.placeholder.com/150" alt="Profile Picture">
-        <table border="1">
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Major</th>
-            </tr>
-            <tr>
-                <td>John Doe</td>
-                <td>21</td>
-                <td>Computer Science</td>
-            </tr>
-        </table>
-    </section>
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
-        <input type="submit" value="Submit">
-    </form>
+
+    <main>
+
+        <section>
+            <h3>Student Details</h3>
+
+            <img src="https://via.placeholder.com/180" alt="Student Profile">
+
+            <table border="1">
+                <tr>
+                    <th>Full Name</th>
+                    <th>Registration Number</th>
+                    <th>Programme</th>
+                </tr>
+                <tr>
+                    <td>Ita, Louis Michael</td>
+                    <td>23/EG/CO/016</td>
+                    <td>Computer Engineering</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h3>Sample Video</h3>
+
+            <video width="320" controls>
+                <source src="sample-video.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </section>
+
+        <section>
+            <h3>Sample Audio</h3>
+
+            <audio controls>
+                <source src="sample-audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <section>
+            <h3>Student Registration Form</h3>
+
+            <form>
+
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname"><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="department">Department:</label><br>
+                <input type="text" id="department" name="department" value="Computer Engineering"><br><br>
+
+                <label for="level">Level:</label><br>
+                <select id="level" name="level">
+                    <option>100 Level</option>
+                    <option>200 Level</option>
+                    <option selected>300 Level</option>
+                    <option>400 Level</option>
+                    <option>500 Level</option>
+                </select><br><br>
+
+                <input type="submit" value="Register">
+
+            </form>
+        </section>
+
+    </main>
+
 </body>
 </html>
