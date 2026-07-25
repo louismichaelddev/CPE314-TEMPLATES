@@ -2,19 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and Interactivity</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #hoverBox {
+            width: 220px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: lightsteelblue;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        #message {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
-    <button id="btn">Click Me</button>
-    <input type="text" id="input" placeholder="Type here">
+
+    <h1>23/EG/CO/016</h1>
+
+    <button id="clickButton">Click Me</button>
+
+    <br><br>
+
+    <input type="text" id="textInput" placeholder="Type something">
+
+    <div id="hoverBox">
+        Hover over this box
+    </div>
+
+    <h3>Counter: <span id="count">0</span></h3>
+
+    <button id="counterButton">Increase</button>
+
+    <br><br>
+
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <button id="validateButton">Validate</button>
+
+    <p id="message"></p>
+
+    <h3 id="timerMessage">This text will change shortly.</h3>
+
     <script>
-        document.getElementById("btn").addEventListener("click", function() {
-            alert("Button clicked!");
+
+        document.getElementById("clickButton").addEventListener("click", function () {
+            alert("You clicked the button!");
         });
 
-        document.getElementById("input").addEventListener("keyup", function(event) {
-            console.log("Key pressed: " + event.key);
+        document.getElementById("textInput").addEventListener("keyup", function (event) {
+            console.log("Key Pressed: " + event.key);
         });
+
+        document.getElementById("hoverBox").addEventListener("mouseover", function () {
+            this.style.backgroundColor = "lightgreen";
+        });
+
+        document.getElementById("hoverBox").addEventListener("mouseout", function () {
+            this.style.backgroundColor = "lightsteelblue";
+        });
+
+        let counter = 0;
+
+        document.getElementById("counterButton").addEventListener("click", function () {
+            counter++;
+            document.getElementById("count").textContent = counter;
+        });
+
+        document.getElementById("validateButton").addEventListener("click", function () {
+
+            let email = document.getElementById("email").value;
+
+            if (email.includes("@")) {
+                document.getElementById("message").textContent = "Email is valid.";
+                document.getElementById("message").style.color = "green";
+            } else {
+                document.getElementById("message").textContent = "Email is invalid.";
+                document.getElementById("message").style.color = "red";
+            }
+
+        });
+
+        setTimeout(function () {
+            document.getElementById("timerMessage").textContent =
+                "The message has changed after 5 seconds.";
+        }, 5000);
+
     </script>
+
 </body>
 </html>
