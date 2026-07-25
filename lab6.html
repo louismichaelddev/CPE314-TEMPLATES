@@ -2,15 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .content {
+            background-color: #e3f2fd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        #output {
+            margin-top: 15px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="title">Original Title</h1>
-    <button onclick="changeTitle()">Change Title</button>
+
+    <h1 id="title">23/EG/CO/016</h1>
+
+    <button onclick="changeContent()">Change Content</button>
+
+    <p id="paragraph">
+        JavaScript can dynamically modify webpage content.
+    </p>
+
+    <ul id="courseList">
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
+
+    <div class="content">
+        This section can be hidden or displayed.
+    </div>
+
+    <button onclick="toggleContent()">Toggle Section</button>
+
+    <br><br>
+
+    <input type="text" id="studentName" placeholder="Enter your name">
+
+    <button onclick="showName()">Show Name</button>
+
+    <div id="output"></div>
+
     <script>
-        function changeTitle() {
-            document.getElementById("title").innerHTML = "New Title!";
+
+        function changeContent() {
+
+            document.getElementById("title").textContent =
+                "DOM Manipulation Completed";
+
+            document.getElementById("paragraph").style.color = "blue";
+
+            let item = document.createElement("li");
+            item.textContent = "JavaScript";
+
+            document.getElementById("courseList").appendChild(item);
+
+            let missing = document.getElementById("unknownElement");
+
+            if (!missing) {
+                console.log("Element 'unknownElement' was not found.");
+            }
+
         }
+
+        function toggleContent() {
+
+            let section = document.querySelector(".content");
+
+            if (section.style.display === "none") {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+
+        }
+
+        function showName() {
+
+            let name = document.getElementById("studentName").value;
+
+            document.getElementById("output").textContent =
+                "Welcome, " + name + "!";
+
+        }
+
     </script>
+
 </body>
 </html>
